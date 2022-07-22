@@ -1,8 +1,21 @@
 import type { AppProps } from 'next/app'
 import 'tailwindcss/tailwind.css';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+if(Component.getLayout){
+  return Component.getLayout(<Component {...pageProps}/>)
 }
 
-export default MyApp
+  return (
+  <>
+  <Header />
+  <Component {...pageProps} />
+  <Footer /> 
+  </>);
+}
+
+export default appWithTranslation(MyApp);
