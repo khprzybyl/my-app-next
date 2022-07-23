@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import { appWithTranslation } from 'next-i18next';
 
+
 function MyApp({ Component, pageProps }: AppProps) {
 
 if(Component.getLayout){
