@@ -1,4 +1,4 @@
-import Footer from "./footer";
+import Footer from "./footer-primary";
 import Header from "./header";
 import { Props } from "../../types";
 
