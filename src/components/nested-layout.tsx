@@ -1,4 +1,4 @@
-import Header from "./header";
+import Header from "./header-primary";
 import { Props } from "../../types";
 
 export const NestedLayout = ({ children }: Props) => {
