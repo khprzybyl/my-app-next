@@ -30,11 +30,7 @@ export const Home: NextPageWithLayout = () => {
 };
 
 Home.getLayout = function getLayout(children: ReactElement) {
-  return (
-    <LoginLayout>
-    {children}
-    </LoginLayout>
-  );
+  return <LoginLayout>{children}</LoginLayout>;
 };
 
 export default Home;

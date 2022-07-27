@@ -1,14 +1,22 @@
-import { Fragment, ReactElement } from "react";
+import { ReactElement } from "react";
 import "tailwindcss/tailwind.css";
 // TODO: rewire translation later
 //import { appWithTranslation } from 'next-i18next';
-import { AppPropsWithLayout, Props } from "../../types";
+import { AppPropsWithLayout } from "../../types";
 import { Layout } from "../components/layout";
 
-const renderRegularLayout = ((children: ReactElement) => (<Layout>{children}</Layout>))
+const renderRegularLayout = ((children: ReactElement) => (
+  <Layout>
+    {children}
+  </Layout>)
+  )
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+
   const getLayout = Component.getLayout ?? renderRegularLayout;
 
-  return getLayout(<Component {...pageProps} />)
+  return getLayout(
+  <Component {...pageProps} />
+  )
 }
 export default MyApp;
