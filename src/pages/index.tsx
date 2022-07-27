@@ -6,7 +6,7 @@ import { ReactElement } from "react";
 //import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 //import { useTranslation } from "next-i18next";
 import { NextPageWithLayout } from "../../types";
-import { NestedLayout } from "../components/nested-layout";
+import { LoginLayout } from "../components/login-layout";
 
 export const Home: NextPageWithLayout = () => {
   return (
@@ -17,7 +17,7 @@ export const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container mx-auto my-6">
-        <h1 className=" text-center">Hello in my app</h1>
+        <h1 className=" text-center">Hello on this site</h1>
 
         <button className=" bg-blue-500 hover:bg-blue-700 text-white py-4 px-6 rounded">
           <Link href="./boarding">
@@ -29,9 +29,11 @@ export const Home: NextPageWithLayout = () => {
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Home.getLayout = function getLayout(children: ReactElement) {
   return (
-      <NestedLayout>{page}</NestedLayout>
+    <LoginLayout>
+    {children}
+    </LoginLayout>
   );
 };
 

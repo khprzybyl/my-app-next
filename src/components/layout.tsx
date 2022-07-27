@@ -4,7 +4,7 @@ import { Props } from "../../types";
 
 export const Layout = ({ children }: Props) => {
   return (
-    <div className="container">
+    <div>
       <Header />
       {children}
       <Footer />
