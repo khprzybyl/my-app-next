@@ -1,20 +1,14 @@
-import type { NextPage } from "next";
+//import type { NextComponentType, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
+import { ReactElement } from "react";
+// TODO: rewire translation later
+//import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+//import { useTranslation } from "next-i18next";
+import { NextPageWithLayout } from "../../types";
+import { LoginLayout } from "../components/login-layout";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["home"])),
-    },
-  };
-}
-
-export const Home: NextPage = (props) => {
-  const { t } = useTranslation();
-
+export const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -23,18 +17,20 @@ export const Home: NextPage = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container mx-auto my-6">
-        <h1 className="text-center">
-          {t('home:welcome_msg')}
-          </h1>
+        <h1 className=" text-center">Hello on this site</h1>
 
-        <button className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded">
+        <button className=" bg-blue-500 hover:bg-blue-700 text-white py-4 px-6 rounded">
           <Link href="./boarding">
-            <a>{t('home:boarding')}</a>
+            <a>Boarding</a>
           </Link>
         </button>
       </div>
     </>
   );
+};
+
+Home.getLayout = function getLayout(children: ReactElement) {
+  return <LoginLayout>{children}</LoginLayout>;
 };
 
 export default Home;
