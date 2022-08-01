@@ -14,9 +14,5 @@ module.exports = {
 
     return config
   },
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
+  
 }
