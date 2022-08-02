@@ -7,7 +7,6 @@ import { ReactElement } from "react";
 //import { useTranslation } from "next-i18next";
 import { NextPageWithLayout } from "../../types";
 import { LoginLayout } from "../components/login-layout";
-import Image from "next/image";
 import backgroundImg from "../../public/images/bg.jpg";
 
 export const Home: NextPageWithLayout = () => {
@@ -19,39 +18,46 @@ export const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="fixed -z-10 l">
-        <Image
-          src={backgroundImg}
-          alt="Picture of the author"
-          className="max-w-100 h-auto w-auto col-start-0 col-end-1 object-cover md:shrink-0 "
-        />
-      </div>
+      <div className="
+      bg-black min-w-min min-h-screen pt-12 max-w-640 bg-no-repeat bg-cover
+      sm:bg-alaskamd ms:w-100% sm:w-640 sm:px-auto
+      md:bg-alaskalg
+      lg:bg-alaskaxl 
+      xl:bg-alaska2xl 
+      ">
 
-      <div className="grid grid-cols-2 gap-20 p-10">
-        <div className="justify-items-center grid w-96 h-96">
-          <p className="absolute text-3xl text-blue top-[200px] text-center items ">
-            &apos;Be the Change <br />
-            You Want to See in <br />
-            the World&apos;
-          </p>
-          <br />
-          <p className=" absolute text-xs text-stone-500y top-[320px]">
-            Mahatma Gandhi
-          </p>
-          <div className="bg-gradient-to-r text-opacity-100 from-cyan-500 via-purple-500 to-pink-500 opacity-40 border-opacity-30 border-black border-8  py-28 rounded-full grid w-96 h-96"></div>
-        </div>
-        <div className="min-h-full py-12 px-4 sm:px-6 lg:px-8 bg-black rounded-2xl drop-shadow-xl">
-          <div className="max-w-md w-full space-y-8">
-            <div>
-              <p className="text-left text-sm text-white">LOGO</p>
-              <h2 className="mt-6 text-left text-2xl text-white">
-                YOUR ACTION PLAN TOWARDS ZERO EMISSIONS
-              </h2>
-              <p className="mt-8 text-left text-sm text-white">LOG IN</p>
+        <div className="
+        grid grid-col-1 content-cover 
+        lg:grid-cols-2 
+        ">
+          <div className="grid justify-items-center items-center sr-only lg:not-sr-only  ">
+
+            <div className="bg-gradient-to-r from-cyan-500/50 via-blue-800/50 to-blue-700/50 
+            py-28 rounded-full w-96 h-96 grid items-center">
+              <p className="text-3xl text-center">
+                &ldquo;Be the Change <br />
+                You Want to See in <br />
+                the World&rdquo;
+              </p>
+              <p className="text-xs text-center">
+                Mahatma Gandhi
+              </p>
             </div>
-            <form className="space-y-4" action="#" method="POST">
-              <input type="hidden" name="remember" defaultValue="true" />
-              <div className="rounded-md shadow-sm space-y-2">
+          </div>
+
+          <div className="grid justify-items-center">
+            <div className="space-y-8 grid justify-items-center bg-black sm:w-96 max-h-max rounded-xl ">
+              
+              <p className="p-6 pt-14 text-center text-sm text-white">LOGO</p>
+
+              <h2 className="text-center text-2xl text-white">
+                YOUR ACTION <br />
+                ZERO CONSEQUENCES
+              </h2>
+
+              <p className="text-center text-sm text-white">LOG IN</p>
+
+              <form action="#" method="POST">
                 <div>
                   <label
                     htmlFor="email-address"
@@ -65,11 +71,11 @@ export const Home: NextPageWithLayout = () => {
                     type="email"
                     autoComplete="email"
                     required
-                    className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-black rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Email address"
+                    className="block w-72 px-3 py-2 border border-gray-300 placeholder-gray-500 text-black rounded-md focus:outline-none focus:border-cyan-400"
+                    placeholder="name@company.com"
                   />
                 </div>
-                <div>
+                <div className="pt-4">
                   <label
                     htmlFor="password"
                     className="text-xs font-thin text-white"
@@ -82,39 +88,35 @@ export const Home: NextPageWithLayout = () => {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-black rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="block w-72 px-3 py-2 border border-gray-300 placeholder-gray-500 text-black rounded-md focus:outline-none focus:border-cyan-400"
                     placeholder="Password"
                   />
                 </div>
-              </div>
-
-              <div className="flex items-center justify-end">
-                <div className="text-xs">
+                <div className="text-right pt-2">
                   <a
                     href="#"
-                    className="font-medium text-white hover:text-indigo-500"
+                    className=" font-medium text-white hover:text-cyan-400 text-xs no-underline hover:underline"
                   >
                     Forgot password?
                   </a>
                 </div>
-              </div>
-
-              <div className="flex items-center justify-center">
-                <button
-                  type="submit"
-                  className=" 
+                <div className="flex items-center justify-center pt-8 pb-12">
+                  <button
+                    type="submit"
+                    className=" 
                 relative w-2/3 
                 flex justify-center 
                 py-2 px-4 
                 border border-cyan-400
                 text-sm font-medium text-white
-                rounded-full bg-black hover:bg-cyan-400 hover:bg-opacity-40 hover:border-opacity-0 hover:text-black"
-                >
-                  <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
-                  LOG IN
-                </button>
-              </div>
-            </form>
+                rounded-full bg-black hover:bg-cyan-400 hover:bg-opacity-80 hover:border-opacity-0 hover:text-black"
+                  >
+                    <span></span>
+                    LOG IN
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
