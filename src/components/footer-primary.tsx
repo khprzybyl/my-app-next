@@ -7,16 +7,9 @@ const Footer: NextComponentType = () => {
 
   return (
     <>
-      <h1 className="text-center bg-neutral-800 text-white font-bold py-5 px-5">
-        Footer
+      <h1 className="text-left bg-neutral-800 text-white text-xs p-8">
+      Created by @Katarzyna Przybyl 2022
       </h1>
-     
-
-
-
-
-
-
     </>
   );
 };
